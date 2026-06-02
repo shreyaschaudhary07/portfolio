@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium personal portfolio showcasing high-performance full-stack web applications, interactive UI/UX designs, and clean scalable codebases.">
+  <title>Premium Developer Portfolio & GitHub Connector</title>
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Fluid Cursor Elements -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Background Glowing Orbs -->
+  <div class="bg-glow-wrapper">
+    <div class="bg-glow-orb-1"></div>
+    <div class="bg-glow-orb-2"></div>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <a href="#" class="logo">ANTIGRAVITY</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#github-setup">GitHub Guide</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="nav-btn">Get In Touch</a>
+  </header>
+
+  <main>
+    <!-- Hero / Landing Section -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="ping"></span>
+          Available for new projects
+        </div>
+        <h1 class="hero-title">
+          Crafting Premium<br>
+          <span>Digital Experiences</span>
+        </h1>
+        <p class="hero-subtitle">
+          Full-stack developer focused on building ultra-fast interactive interfaces, pixel-perfect glassmorphism layouts, and clean scalable systems. Connect this workspace directly to GitHub to deploy!
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">Explore Work</a>
+          <a href="#github-setup" class="btn-secondary">Connect GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Skills Section -->
+    <section id="about">
+      <div class="section-title-wrap reveal">
+        <span class="section-subtitle">Aesthetic & Code</span>
+        <h2 class="section-title">About & Skills</h2>
+      </div>
+      
+      <div class="about-grid glass-card reveal">
+        <div class="about-text">
+          <p>
+            I am a software engineer driven by the intersection of performance, design, and user experience. I believe that writing code should be accompanied by stunning presentation—ensuring that every site feels responsive, fluid, and premium.
+          </p>
+          <p>
+            This website is powered by pure vanilla HTML, custom CSS, and interactive JavaScript. It is optimized to achieve a 100% Performance score, load instantly, and display beautifully across mobile devices, tablets, and full screens.
+          </p>
+        </div>
+        
+        <div class="skills-container">
+          <div class="skill-bar-wrap">
+            <div class="skill-header">
+              <span class="skill-name">Frontend Architecture (HTML/CSS/JS)</span>
+              <span class="skill-percent">95%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percent="95"></div>
+            </div>
+          </div>
+          
+          <div class="skill-bar-wrap">
+            <div class="skill-header">
+              <span class="skill-name">Backend Systems (Node.js/APIs)</span>
+              <span class="skill-percent">88%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percent="88"></div>
+            </div>
+          </div>
+          
+          <div class="skill-bar-wrap">
+            <div class="skill-header">
+              <span class="skill-name">UI/UX & Glassmorphism Design</span>
+              <span class="skill-percent">92%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percent="92"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-wrap">
+            <div class="skill-header">
+              <span class="skill-name">Git & Automation Workflow</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percent="90"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-title-wrap reveal">
+        <span class="section-subtitle">Curated Gallery</span>
+        <h2 class="section-title">Selected Projects</h2>
+      </div>
+
+      <div class="project-filters reveal">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+        <button class="filter-btn" data-filter="design">UI/UX</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card glass-card reveal" data-category="frontend design">
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">HTML & CSS</span>
+              <span class="project-tag">UI/UX</span>
+            </div>
+            <h3>Apex Dashboard</h3>
+            <p>A real-time financial tracking interface emphasizing smooth charts, glassmorphism card nodes, and immersive transitions.</p>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">Preview Interface <span>→</span></a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass-card reveal" data-category="backend">
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">REST API</span>
+            </div>
+            <h3>Nova Engine</h3>
+            <p>High-throughput telemetry backend system managing database caching, cluster load balancing, and fast secure endpoints.</p>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">View Repository <span>→</span></a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card glass-card reveal" data-category="frontend design">
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Micro-Interactions</span>
+            </div>
+            <h3>Aura Player</h3>
+            <p>An elegant audio component system with beautiful custom scrollbars, glowing audio nodes, and deep dynamic CSS colors.</p>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">Try Live Demo <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Setup Terminal Guide -->
+    <section id="github-setup">
+      <div class="section-title-wrap reveal">
+        <span class="section-subtitle">Integration Center</span>
+        <h2 class="section-title">Connect to Your GitHub</h2>
+      </div>
+
+      <div class="github-panel glass-card reveal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+          </div>
+          <div class="terminal-title">git-setup.sh</div>
+          <div class="terminal-status">
+            <span class="status-pulse"></span>
+            Disconnected
+          </div>
+        </div>
+        
+        <p class="terminal-desc">
+          Follow these easy steps to initialize Git and upload this workspace directly to a new repository on your GitHub account:
+        </p>
+
+        <div class="terminal-steps">
+          <!-- Step 1 -->
+          <div class="terminal-step">
+            <div class="step-details">
+              <span class="step-num">Step 1: Initialize Local Git</span>
+              <span class="step-code">git init</span>
+            </div>
+            <button class="copy-btn" title="Copy command">
+              <!-- Inline copy SVG icon -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="terminal-step">
+            <div class="step-details">
+              <span class="step-num">Step 2: Add Files & Make Commit</span>
+              <span class="step-code">git add . && git commit -m "Initial portfolio commit"</span>
+            </div>
+            <button class="copy-btn" title="Copy command">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="terminal-step">
+            <div class="step-details">
+              <span class="step-num">Step 3: Rename Branch to Main</span>
+              <span class="step-code">git branch -M main</span>
+            </div>
+            <button class="copy-btn" title="Copy command">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="terminal-step">
+            <div class="step-details">
+              <span class="step-num">Step 4: Link Your Remote GitHub Repo</span>
+              <span class="step-code">git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git</span>
+            </div>
+            <button class="copy-btn" title="Copy command">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="terminal-step">
+            <div class="step-details">
+              <span class="step-num">Step 5: Push Files to GitHub</span>
+              <span class="step-code">git push -u origin main</span>
+            </div>
+            <button class="copy-btn" title="Copy command">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+      <div class="section-title-wrap reveal">
+        <span class="section-subtitle">Get In Touch</span>
+        <h2 class="section-title">Send a Message</h2>
+      </div>
+
+      <div class="contact-container glass-card reveal">
+        <form id="portfolioContactForm">
+          <div class="form-group">
+            <input type="text" id="formName" class="form-input" placeholder=" " required>
+            <label for="formName" class="form-label">Your Name</label>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" id="formEmail" class="form-input" placeholder=" " required>
+            <label for="formEmail" class="form-label">Your Email</label>
+          </div>
+          
+          <div class="form-group">
+            <textarea id="formMessage" class="form-input" rows="5" placeholder=" " required></textarea>
+            <label for="formMessage" class="form-label">How can I help you?</label>
+          </div>
+          
+          <button type="submit" class="btn-primary form-submit-btn">Send Message</button>
+        </form>
+        <div id="formFeedback" class="form-feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Developer Portfolio. All Rights Reserved.</p>
+    <p>Powered by <a href="#">Antigravity AI Design</a></p>
+  </footer>
+
+  <!-- Script Link -->
+  <script src="script.js"></script>
+</body>
+</html>
