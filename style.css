@@ -550,7 +550,7 @@ section {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 50px;
-  align-items: center;
+  align-items: start;
 }
 
 .about-text p {
@@ -1112,10 +1112,11 @@ footer a {
   transform: translateY(0);
 }
 
-/* Social Cards Grid in Contact Section */
+/* Social Cards Flexbox Grid in Contact Section */
 .social-links-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   max-width: 900px;
   margin: 50px auto 0;
@@ -1123,11 +1124,14 @@ footer a {
 }
 
 .social-card {
+  flex: 1 1 260px;
+  max-width: 285px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px !important;
+  padding: 30px 24px !important;
   text-decoration: none;
   color: var(--text-main);
   text-align: center;
@@ -1165,15 +1169,50 @@ footer a {
   letter-spacing: 0.5px;
   font-weight: 500;
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
   transform: translateZ(15px);
   color: var(--text-muted);
 }
 
 .social-card:hover .social-sub {
   color: var(--text-main);
+}
+
+/* Timeline Glowing SVGs Styling */
+.timeline-svg-logo {
+  height: 38px;
+  width: 38px;
+  transition: var(--transition-bounce);
+  transform: translateZ(20px);
+}
+
+.timeline-svg-logo.gold-glow {
+  color: #ffb300;
+  filter: drop-shadow(0 0 4px rgba(255, 179, 0, 0.35));
+}
+.timeline-item:hover .timeline-svg-logo.gold-glow {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 0 10px rgba(255, 179, 0, 0.7));
+}
+
+.timeline-svg-logo.cyan-glow {
+  color: var(--accent-cyan);
+  filter: drop-shadow(0 0 4px rgba(0, 242, 254, 0.35));
+}
+.timeline-item:hover .timeline-svg-logo.cyan-glow {
+  transform: scale(1.15) rotate(-5deg);
+  filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.7));
+}
+
+.timeline-svg-logo.purple-glow {
+  color: #c084fc;
+  filter: drop-shadow(0 0 4px rgba(192, 132, 252, 0.35));
+}
+.timeline-item:hover .timeline-svg-logo.purple-glow {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 0 10px rgba(192, 132, 252, 0.7));
 }
 
 /* Responsive Queries */
