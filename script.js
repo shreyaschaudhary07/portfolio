@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   
   // ==========================================================================
-  // 1. Custom Cursor Logic
+  // 1. Custom Liquid Cursor Logic
   // ==========================================================================
   const cursor = document.querySelector('.custom-cursor');
   const follower = document.querySelector('.custom-cursor-follower');
@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Smooth lagging follower cursor
   function animateFollower() {
     // Linear interpolation for smooth trailing lag
-    followerX += (mouseX - followerX) * 0.15;
-    followerY += (mouseY - followerY) * 0.15;
+    followerX += (mouseX - followerX) * 0.12;
+    followerY += (mouseY - followerY) * 0.12;
     
     if (follower) {
       follower.style.left = followerX + 'px';
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   animateFollower();
 
   // Hover states expansion
-  const hoverElements = document.querySelectorAll('a, button, .filter-btn, .project-card, .form-input, .copy-btn');
+  const hoverElements = document.querySelectorAll('a, button, .filter-btn, .project-card, .form-input, .copy-btn, .timeline-item');
   hoverElements.forEach(elem => {
     elem.addEventListener('mouseenter', () => {
       cursor?.classList.add('hovering');
@@ -59,7 +59,72 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 2. Scroll Reveal Animations & Skills Progress Trigger
+  // 2. Interactive 3D Card Tilt & Specular Glare Effect
+  // ==========================================================================
+  const tiltCards = document.querySelectorAll('.tilt-target');
+  const maxTiltDegrees = 12; // Maximum tilt angle
+
+  tiltCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      
+      // Cursor coordinates relative to the card
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Normalized coordinates from -1 to 1
+      const percentX = (x / rect.width) * 2 - 1;
+      const percentY = (y / rect.height) * 2 - 1;
+      
+      // Calculate corresponding 3D rotation angles
+      const rotateX = (-percentY * maxTiltDegrees).toFixed(2);
+      const rotateY = (percentX * maxTiltDegrees).toFixed(2);
+      
+      // Update custom CSS variables for specular glare
+      card.style.setProperty('--x', `${(x / rect.width) * 100}%`);
+      card.style.setProperty('--y', `${(y / rect.height) * 100}%`);
+      
+      // Apply 3D rotation transform immediately with depth scaling
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      card.style.transition = 'transform 0.08s ease-out'; // Fast tracking transition
+    });
+    
+    // Smooth reset on cursor leave
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)'; // Snappy bounce-back
+    });
+  });
+
+  // ==========================================================================
+  // 3. Hero Section Depth Parallax
+  // ==========================================================================
+  const heroSection = document.getElementById('hero');
+  const parallaxLayers = document.querySelectorAll('.parallax-layer');
+  const maxParallaxShift = 15; // Maximum translation in pixels
+
+  if (heroSection) {
+    window.addEventListener('mousemove', (e) => {
+      // Coordinates normalized relative to window center
+      const percentX = (e.clientX / window.innerWidth) * 2 - 1;
+      const percentY = (e.clientY / window.innerHeight) * 2 - 1;
+      
+      parallaxLayers.forEach(layer => {
+        const speed = parseFloat(layer.getAttribute('data-speed')) || 1;
+        
+        // Calculate shift based on individual speed values
+        const shiftX = (percentX * speed * maxParallaxShift).toFixed(1);
+        const shiftY = (percentY * speed * maxParallaxShift).toFixed(1);
+        
+        // Apply 3D translate translation layer
+        layer.style.transform = `translate3d(${shiftX}px, ${shiftY}px, 0)`;
+        layer.style.transition = 'transform 0.15s ease-out';
+      });
+    });
+  }
+
+  // ==========================================================================
+  // 4. Scroll Reveal Animations & Skills Progress Trigger
   // ==========================================================================
   const revealElements = document.querySelectorAll('.reveal');
   
@@ -93,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 3. Dynamic Project Filtering System
+  // 5. Dynamic Project Filtering System
   // ==========================================================================
   const filterButtons = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
@@ -119,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 4. GitHub Setup Clipboard Copy Helper
+  // 6. GitHub Setup Clipboard Copy Helper
   // ==========================================================================
   const copyButtons = document.querySelectorAll('.copy-btn');
   
@@ -150,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 5. Contact Form Submission Logic (Interactive Demo)
+  // 7. Contact Form Submission Logic (Interactive Demo)
   // ==========================================================================
   const contactForm = document.getElementById('portfolioContactForm');
   const formFeedback = document.getElementById('formFeedback');
